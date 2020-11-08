@@ -1,16 +1,18 @@
 import './VideoItem.css';
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class VideoItem extends Component {
-  render() {
-    const { id, snippet } = this.props.vid;
-    return (
-      <div className="video-item item">
-        <img className="ui image" src={snippet.thumbnails.medium.url} alt="" />
-        <div className="content">
-          <div className="header">{snippet.title}</div>
-        </div>
+export default function VideoItem(props) {
+  const { vid, onVideoSelect } = props;
+  return (
+    <div onClick={() => onVideoSelect(vid)} className="video-item item">
+      <img
+        className="ui image"
+        src={vid.snippet.thumbnails.medium.url}
+        alt=""
+      />
+      <div className="content">
+        <div className="header">{vid.snippet.title}</div>
       </div>
-    );
-  }
+    </div>
+  );
 }

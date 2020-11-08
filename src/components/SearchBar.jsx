@@ -15,9 +15,7 @@ export default function SearchBar(props) {
           <label htmlFor="">Video Search</label>
           <input
             type="text"
-            onChange={(e) => {
-              setSearchTerm(e.target.value);
-            }}
+            onChange={(e) => setSearchTerm(e.target.value)}
             value={searchTerm}
           />
         </div>

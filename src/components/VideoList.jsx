@@ -2,11 +2,15 @@ import React from 'react';
 import VideoItem from './VideoItem';
 
 export default function VideoList(props) {
-  //props.videos
+  const { videos, onVideoSelect } = props;
   return (
     <div className="ui relaxed divided list">
-      {props.videos.map((video) => (
-        <VideoItem key={video.id.videoId} vid={video} />
+      {videos.map((video) => (
+        <VideoItem
+          key={video.id.videoId}
+          vid={video}
+          onVideoSelect={onVideoSelect}
+        />
       ))}
     </div>
   );
